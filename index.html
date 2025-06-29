@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #001f3f, #003366);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      width: 90%;
+      max-width: 460px;
+      backdrop-filter: blur(12px);
+      color: #ffffff;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      transition: 0.4s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .amount p,
+    .from p,
+    .to p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .amount input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 0.75rem;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .dropdown {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .select-container {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 0.75rem;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      max-width: 180px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .select-container img {
+      width: 2rem;
+      margin-right: 0.5rem;
+    }
+
+    .select-container select {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 1rem;
+      appearance: none;
+    }
+
+    .select-container select option {
+      background-color: #001f3f;
+      color: white;
+    }
+
+    .msg {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 1rem;
+      border-radius: 1rem;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: #007bff;
+      border: none;
+      border-radius: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    i.fa-arrow-right-arrow-left {
+      font-size: 1.5rem;
+      background-color: white;
+      color: #003366;
+      padding: 0.7rem;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    i.fa-arrow-right-arrow-left:hover {
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 500px) {
+      .dropdown {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .select-container {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Currency Converter</h2>
+    <form>
+      <div class="amount">
+        <p>Enter Amount</p>
+        <input type="text" value="1" />
+      </div>
+      <div class="dropdown">
+        <div class="from">
+          <p>From</p>
+          <div class="select-container">
+            <img src="https://flagsapi.com/US/flat/64.png" />
+            <select name="from"></select>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        <div class="to">
+          <p>To</p>
+          <div class="select-container">
+            <img src="https://flagsapi.com/IN/flat/64.png" />
+            <select name="to"></select>
+          </div>
+        </div>
+      </div>
+      <div class="msg">1 USD = 80 INR</div>
+      <button type="submit">Get Exchange Rate</button>
+    </form>
+  </div>
+
+  <!-- Your script files -->
+  <script src="codes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
